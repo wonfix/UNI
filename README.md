@@ -1,6 +1,6 @@
 # UNI
 Cosas Universidad
-a
+
 1.Clonar Repositorio
 git clone https://github.com/wonfix/UNI.git
 
@@ -8,7 +8,10 @@ git clone https://github.com/wonfix/UNI.git
 git status
 
 3.Realizar cambios y hacer commits
+Si tienes muchos cambios y quieres subir todos utiliza
 git add .
+Si solo quieres subir los cambios de algo especifico utiliza
+git add NombreFichero
 Para guardar los cambios en el historial de git
 git commit -m "mensaje descriptivo"
 
