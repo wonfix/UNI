@@ -4,6 +4,7 @@
 package Aplicacion;
 
 import Modelo.Socio;
+import Modelo.Monitor;
 import config.HibernateUtil;
 import java.util.List;
 import java.util.Scanner;
@@ -156,7 +157,7 @@ public class Practica1 {
                     char categoria = sc.nextLine().charAt(0);
                     //Si nos pone a b c d e lo pasamos a MAYUSCULAS
                     categoria = Character.toUpperCase(categoria);
-                    
+
                     //Recuerda para char son '' y para string ""
                     if (categoria != 'A' && categoria != 'B' && categoria != 'C' && categoria != 'D' && categoria != 'E') {
                         System.out.println("Recurda tiene que ser A, B , C, D, E");
@@ -176,6 +177,66 @@ public class Practica1 {
                             if (sesion != null && sesion.isOpen()) {
                                 sesion.close();
                             }
+                        }
+                    }
+                }
+
+                pausar(sc);
+                break;
+
+                case 6: {
+                    /*Nombre de monitor por nick. Dado un nick solicitado por teclado, muestra el nombre
+                       del monitor al que le corresponde HECHO EN SQL NATIVO*/
+                    Session sesion = sessionFactory.openSession();
+                    Transaction tr = sesion.beginTransaction();
+                    System.out.print("Dime un Nick: ");
+                    String NickName = sc.nextLine();
+
+                    try {
+                        Query consulta = sesion.createQuery("SELECT m FROM Monitor m WHERE m.nick=:nick", Monitor.class).setParameter("nick", NickName);
+                        List<Monitor> monitores = consulta.getResultList();
+                        for (Monitor monitor : monitores) {
+                            System.out.println("Nombre: " + monitor.getNombre());
+                        }
+                        tr.commit();
+                    } catch (Exception e) {
+                        tr.rollback();
+                        System.out.println("Error en la recuperación "
+                                + e.getMessage());
+                    } finally {
+                        if (sesion != null && sesion.isOpen()) {
+                            sesion.close();
+                        }
+                    }
+
+                }
+
+                pausar(sc);
+                break;
+
+                case 7: {
+                    /*Información de socio por nombre. Dado un nombre de socio solicitado por teclado,
+                        muestra su información hecho en HQL*/
+                    Session sesion = sessionFactory.openSession();
+                    Transaction tr = sesion.beginTransaction();
+                    System.out.print("Dime un nombre: ");
+                    String Name = sc.nextLine();
+
+                    try {
+                        //Query consulta = sesion.createQuery("FROM Socio s WHERE s.nombre LIKE :Name", Socio.class).setParameter("Name", "%" + Name + "%");
+                        Query consulta = sesion.createQuery("FROM Socio s WHERE s.nombre=:Name", Socio.class).setParameter("Name",  Name );
+                        List<Socio> socios = consulta.getResultList();
+                        for (Socio socio : socios) {
+                            System.out.println("Nombre: " + socio.getNombre() + " | Numero de socio: " + socio.getNumeroSocio() + " | Dni: " + socio.getDni() + " | Fecha de Nacimiento: " + socio.getFechaNacimiento() + " | Telefono: " + socio.getTelefono() + " | Correo: " + socio.getCorreo() + " | Fecha Entrada: " + socio.getFechaEntrada() + " | Categoria: " + socio.getCategoria());
+                        }
+                        tr.commit();
+                    } catch (Exception e) {
+                        tr.rollback();
+                        System.out.println("Error en la recuperación "
+                                + e.getMessage());
+                    } finally {
+                        if (sesion != null && sesion.isOpen()) { 
+                            sesion.close();
                         }
                     }
                 }
