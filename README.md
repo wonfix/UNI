@@ -26,3 +26,14 @@ git remote -v
 
 8.Eliminar el repositorio local
 rm -rf UNI
+
+
+9. Para crear una nueva rama:
+git checkout rama "cuando creamos una rama nueva a partir de una nueva tendremos que asegurarnos que estamos en la rama que queremos"CLONAR""
+git pull origin rama "Para asegurarnos que la rama que quermos "Clonar" esta con los cambios actuales"
+git checkout -b Nueva-Rama "Para crear la nueva Rama"
+git branch "Para ver cuanta rama tenemos y saldra como * en la que estamos"
+git push -u origin Nueva-Rama "Una vez creada la rama en local hay que subirla a gitHub"
+el -u hace un git push y git pull
+git checkout rama "Cambiara de rama a la que quieras"
+
