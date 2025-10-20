@@ -140,6 +140,16 @@ public class Practica1 {
             System.out.println("8. Informacion de actividades por dia y cuota");
             System.out.println("9. Informacion de socios por categoria (HQL nombrada)");
             System.out.println("10. Informacion de socios por categoria (SQL nombrada)");
+            System.out.println("11. Inserción de socio.");
+            System.out.println("12. Borrado de socio por DNI.");
+            System.out.println("13. Información de la actividad de la que es responsable un monitor por DNI.");
+            System.out.println("14. Información de las actividades en las que está inscrito un socio por DNI.");
+            System.out.println("15. Información de los socios inscritos en una actividad por nombre de la actividad.");
+            System.out.println("16. Inscripción de un socio en una actividad");
+            System.out.println("17. Baja de un socio de una actividad");
+            System.out.println("18. Mostrar el horario de un monitor por el DNI");
+            System.out.println("19. Mostrar la cuota que paga un socio.");
+            System.out.println("20. Mostrar los socios que sean mayores a una edad.");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opcion: ");
             opc = Integer.parseInt(sc.nextLine());
@@ -285,9 +295,138 @@ public class Practica1 {
 
                 pausar(sc);
                 break;
-                
+
                 case 10: {
                     System.out.println("Soy e 10");
+                }
+                pausar(sc);
+                break;
+
+                case 11: {
+                    /* Inserción de socio. Se le pedirá al usuario los datos correspondientes al nuevo socio y se
+                        insertará en la BD teniendo en cuenta la unicidad de la clave primaria y el DNI*/
+                    Session sesion = sessionFactory.openSession();
+                    Transaction tr = sesion.beginTransaction();
+                    try {
+                        String numSocio, nombre, dni, fechaNac, numTelefono, correo, fechaEnt;
+                        char categoria;
+                        System.out.println("Dime el numero de Socio: ");
+                        numSocio = sc.nextLine();
+                        System.out.println("Dime el nombre del Socio: ");
+                        nombre = sc.nextLine();
+                        System.out.println("Dime el DNI del Socio: ");
+                        dni = sc.nextLine();
+                        System.out.println("Dime el numero de Telefono: ");
+                        numTelefono = sc.nextLine();
+                        System.out.println("Dime la Fecha de Nacimiento del Socio: ");
+                        fechaNac = sc.nextLine();
+                        System.out.println("Dime el correo del Socio: ");
+                        correo = sc.nextLine();
+                        System.out.println("Dime la Fecha de Entrada del Socio: ");
+                        fechaEnt = sc.nextLine();
+                        System.out.println("Dime la Categoria del Socio: ");
+                        categoria = sc.nextLine().charAt(0);
+
+                        Socio nuevoSocio = new Socio(numSocio, nombre, dni, fechaEnt, categoria);
+
+                        //Añadir campos opcionales Correo, telefono y fechaNac
+                        nuevoSocio.setCorreo(correo);
+                        nuevoSocio.setTelefono(numTelefono);
+                        nuevoSocio.setFechaNacimiento(fechaEnt);
+
+                        //Preguntar es mejor que Hibernate lance la excepcion o tengo que hacer una consulta antes y comprobar que no exista el dni y el numSocio antes de insertar
+                        sesion.persist(nuevoSocio);
+                        tr.commit();
+                        System.out.println("Socio Insertado correctamente...");
+                    } catch (Exception ex) {
+                        tr.rollback();
+                        System.out.println("Error al insertar Socio. Tal vez ya exista...");
+                    } finally {
+                        if (sesion != null && sesion.isOpen()) {
+                            sesion.close();
+                        }
+                    }
+
+                }
+                pausar(sc);
+                break;
+
+                case 12: {
+                    /*Borrado de socio por DNI. Se le pedirá al usuario el DNI del socio a eliminar y se procederá a
+                        su borrado*/
+                    Session sesion = sessionFactory.openSession();
+                    Transaction tr = sesion.beginTransaction();
+                    
+                    try {
+                        System.out.println("Introduzca el DNI del Socio: ");
+                        String dni = sc.nextLine();
+                        
+                        Query consulta = sesion.createNativeQuery("SELECT numeroSocio FROM SOCIO WHERE dni = :dni", String.class).setParameter("dni", dni);
+                        List<String> eliminarSocio = consulta.getResultList();
+                        for(String numeroSocio : eliminarSocio){
+                            System.out.println("Numero de socio a eliminar: " + numeroSocio);
+                            Socio socio = sesion.find(Socio.class, numeroSocio);
+                            sesion.remove(socio);
+                        }                 
+                        tr.commit();
+                        System.out.println("Socio borrado correctamente...");
+                    } catch (Exception ex){
+                        System.out.println("No se encontro el dni del socio. Tal vez no exista...");
+                        tr.rollback();
+                    } finally {
+                        if( sesion != null && sesion.isOpen()){
+                            sesion.close();
+                        }
+                    }
+
+                }
+                pausar(sc);
+                break;
+
+                case 13: {
+                    System.out.println("Soy el 13");
+                }
+                pausar(sc);
+                break;
+
+                case 14: {
+                    System.out.println("Soy el 14");
+                }
+                pausar(sc);
+                break;
+
+                case 15: {
+                    System.out.println("Soy el 15");
+                }
+                pausar(sc);
+                break;
+
+                case 16: {
+                    System.out.println("Soy el 16");
+                }
+                pausar(sc);
+                break;
+
+                case 17: {
+                    System.out.println("Soy el 17");
+                }
+                pausar(sc);
+                break;
+
+                case 18: {
+                    System.out.println("Soy el 18");
+                }
+                pausar(sc);
+                break;
+
+                case 19: {
+                    System.out.println("Soy el 19");
+                }
+                pausar(sc);
+                break;
+
+                case 20: {
+                    System.out.println("Soy el 20");
                 }
                 pausar(sc);
                 break;
