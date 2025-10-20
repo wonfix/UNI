@@ -1,0 +1,167 @@
+# depslib dependency file v1.0
+1759859306 source:g:\mp\practica1\src\fecha.cpp
+	"Fecha.h"
+
+1759859306 
+
+1759859442 g:\mp\practica1\include\fecha.h
+
+1760889254 source:/home/wonfix/Escritorio/UNI/MP/Practica1/main.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	"Fecha.h"
+	"Cliente.h"
+	"Contrato.h"
+	"ContratoTP.h"
+	"ContratoMovil.h"
+
+1759944163 /home/wonfix/Escritorio/UNI/MP/Practica1/include/Fecha.h
+	<iostream>
+
+1759947306 /home/wonfix/Escritorio/UNI/MP/Practica1/include/Cliente.h
+	<iostream>
+	"Fecha.h"
+
+1759947635 source:/home/wonfix/Escritorio/UNI/MP/Practica1/src/Cliente.cpp
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	<sstream>
+	"Cliente.h"
+
+1759947768 source:/home/wonfix/Escritorio/UNI/MP/Practica1/src/Fecha.cpp
+	"Fecha.h"
+
+1760895162 source:/home/wonfix/Escritorio/UNI/MP/Practica1/src/Contrato.cpp
+	"Contrato.h"
+
+1760895184 /home/wonfix/Escritorio/UNI/MP/Practica1/include/Contrato.h
+	<iostream>
+	"Fecha.h"
+
+1760895122 source:/home/wonfix/Escritorio/UNI/MP/Practica1/src/ContratoMovil.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	"Contrato.h"
+	"ContratoMovil.h"
+
+1760890860 /home/wonfix/Escritorio/UNI/MP/Practica1/include/ContratoMovil.h
+	<iostream>
+	"Fecha.h"
+	"Contrato.h"
+
+1760892271 source:/home/wonfix/Escritorio/UNI/MP/Practica1/src/ContratoTP.cpp
+	"ContratoTP.h"
+
+1760892261 /home/wonfix/Escritorio/UNI/MP/Practica1/include/ContratoTP.h
+	<iostream>
+	"Fecha.h"
+	"Contrato.h"
+
+1760950738 source:/home/wonfix/Escritorio/UNI/MP/Practica1_MP/main.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	"Fecha.h"
+	"Cliente.h"
+	"Contrato.h"
+	"ContratoTP.h"
+	"ContratoMovil.h"
+
+1760950738 /home/wonfix/Escritorio/UNI/MP/Practica1_MP/include/Fecha.h
+	<iostream>
+
+1760950738 /home/wonfix/Escritorio/UNI/MP/Practica1_MP/include/Cliente.h
+	<iostream>
+	"Fecha.h"
+
+1760953608 /home/wonfix/Escritorio/UNI/MP/Practica1_MP/include/Contrato.h
+	<iostream>
+	"Fecha.h"
+
+1760953342 /home/wonfix/Escritorio/UNI/MP/Practica1_MP/include/ContratoTP.h
+	<iostream>
+	"Fecha.h"
+	"Contrato.h"
+
+1760950738 /home/wonfix/Escritorio/UNI/MP/Practica1_MP/include/ContratoMovil.h
+	<iostream>
+	"Fecha.h"
+	"Contrato.h"
+
+1760950738 source:/home/wonfix/Escritorio/UNI/MP/Practica1_MP/src/Cliente.cpp
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	<sstream>
+	"Cliente.h"
+
+1760950738 source:/home/wonfix/Escritorio/UNI/MP/Practica1_MP/src/ContratoMovil.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	"Contrato.h"
+	"ContratoMovil.h"
+
+1760950738 source:/home/wonfix/Escritorio/UNI/MP/Practica1_MP/src/Fecha.cpp
+	"Fecha.h"
+
+1760981778 source:/home/wonfix/Escritorio/UNI/MP/Practica1B/main.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	"Fecha.h"
+	"Cliente.h"
+	"Contrato.h"
+	"ContratoTP.h"
+	"ContratoMovil.h"
+
+1760950738 /home/wonfix/Escritorio/UNI/MP/Practica1B/include/Fecha.h
+	<iostream>
+
+1760950738 /home/wonfix/Escritorio/UNI/MP/Practica1B/include/Cliente.h
+	<iostream>
+	"Fecha.h"
+
+1760953608 /home/wonfix/Escritorio/UNI/MP/Practica1B/include/Contrato.h
+	<iostream>
+	"Fecha.h"
+
+1760953342 /home/wonfix/Escritorio/UNI/MP/Practica1B/include/ContratoTP.h
+	<iostream>
+	"Fecha.h"
+	"Contrato.h"
+
+1760950738 /home/wonfix/Escritorio/UNI/MP/Practica1B/include/ContratoMovil.h
+	<iostream>
+	"Fecha.h"
+	"Contrato.h"
+
+1760981790 source:/home/wonfix/Escritorio/UNI/MP/Practica1B/src/Cliente.cpp
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	<sstream>
+	"Cliente.h"
+
+1760953160 source:/home/wonfix/Escritorio/UNI/MP/Practica1B/src/Contrato.cpp
+	"Contrato.h"
+
+1760950738 source:/home/wonfix/Escritorio/UNI/MP/Practica1B/src/ContratoMovil.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	"Contrato.h"
+	"ContratoMovil.h"
+
+1760953468 source:/home/wonfix/Escritorio/UNI/MP/Practica1B/src/ContratoTP.cpp
+	"ContratoTP.h"
+
+1760981751 source:/home/wonfix/Escritorio/UNI/MP/Practica1B/src/Fecha.cpp
+	"Fecha.h"
+

@@ -15,15 +15,19 @@ class ContratoTP: public Contrato {
 
 public:
   ContratoTP(long int dni, Fecha f, int m);
-  //virtual ~ContratoTP(); //¿es necesario? pensar y reflexionad
-  //ContratoTP(const ContratoTP& c);  //¿es necesario? pensar y reflexionad
-  //ContratoTP& operator=(const ContratoTP& c); //¿es necesario? pensar y reflexionad
+  //virtual ~ContratoTP(); //Â¿es necesario? pensar y reflexionad
+  //ContratoTP(const ContratoTP& c);  //Â¿es necesario? pensar y reflexionad
+  //ContratoTP& operator=(const ContratoTP& c); //Â¿es necesario? pensar y reflexionad
 
   static int getLimiteMinutos() { return ContratoTP::minutosTP; }
   static float getPrecio() { return ContratoTP::precioTP; }
   static void setTarifaPlana(int m, float p); //el el .cpp se pone la cabecera sin la palabra static
 
   //A RELLENAR POR EL ALUMNO...
+  float factura() const;
+  int getMinutosHablados() const { return this->minutosHablados; }
+  void setMinutosHablados(int m) { this->minutosHablados = m; }
+  void ver() const;
 
 };
 

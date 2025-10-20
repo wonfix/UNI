@@ -1,17 +1,18 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
 
-#include <iostream> //cin, cout
+#include <iostream>
 #include "Fecha.h"
 
 using namespace std;
-//SI FALTA ALGUN METODO O FUNCION AÑADIRLO...
+
 class Cliente {
   long int dni;
   char *nombre;
   Fecha fechaAlta;
 public:
   Cliente(long int d, char *nom, Fecha f);
+
   virtual ~Cliente();
   Cliente& operator=(const Cliente& c);
 
@@ -23,9 +24,9 @@ public:
   void setFecha(Fecha f);
 
   bool operator==(Cliente c) const; // if (c1 ===c2)
-
+  Cliente(const Cliente &c);
+  friend ostream& operator<<(ostream &s, const Cliente &c);
 };
 
-ostream& operator<<(ostream &s, const Cliente &c); //funcion no amiga de la clase
 
-#endif // CLIENTE_H
+#endif

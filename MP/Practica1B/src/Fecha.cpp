@@ -33,7 +33,7 @@ void Fecha::setFecha(const int &dia, const int &mes, const int &a) {
 */
 //ES MAS RAPIDO Y COMODO USAR UN ARRAY QUE GUARDE LOS DIAS DE CADA MES...
     int dmax, diaMes[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
-    this->anio=a; //VIP debo asignar año para que al llamar a bisiesto() tenga el año bien
+    this->anio=a; //VIP debo asignar aï¿½o para que al llamar a bisiesto() tenga el aï¿½o bien
     if (this->bisiesto())
         diaMes[2]=29;
 
@@ -54,10 +54,10 @@ void Fecha::setFecha(const int &dia, const int &mes, const int &a) {
 }
 
 bool Fecha::bisiesto() const {
-  if (this->anio%4==0) //esto no es exacto... corregidlo ustedes
-    return true;
-  else
-    return false;
+    if ((this->anio%4==0 && this->anio %100 != 0) || (this->anio % 400 == 0)) //esto no es exacto... corregidlo ustedes
+        return true;
+    else
+        return false;
 }
 
 void Fecha::ver() const {
@@ -69,29 +69,45 @@ void Fecha::ver() const {
   cout << this->mes << "/" << this->anio;
 }
 
-Fecha Fecha::operator++() {   //++f
-  int dmax, diaMes[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
-  if (this->bisiesto()) //si el año es bisiesto febrero tiene 29 dias
-    diaMes[2]=29;
-  dmax=diaMes[this->mes];
-  this->dia++;
-  if (this->dia>dmax) { //si al incrementar dia superamos el numero de dias de dicho mes
-    this->dia=1;      //pasamos a 1
-    this->mes++;      //del mes siguiente
-    if (this->mes>12) { //si al incrementar mes pasamos de 12 meses
-      this->mes=1;    //pasamos al mes 1
-      this->anio++;   //del año siguiente
+Fecha Fecha::operator++() {   //++f Incrementamos y pasamos
+    int dmax, diaMes[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+    if (this->bisiesto()) //si el aï¿½o es bisiesto febrero tiene 29 dias
+      diaMes[2]=29;
+    dmax=diaMes[this->mes];
+    this->dia++;
+    if (this->dia>dmax) { //si al incrementar dia superamos el numero de dias de dicho mes
+        this->dia=1;      //pasamos a 1
+        this->mes++;      //del mes siguiente
+        if (this->mes>12) { //si al incrementar mes pasamos de 12 meses
+            this->mes=1;    //pasamos al mes 1
+            this->anio++;   //del aï¿½o siguiente
+        }
     }
-  }
-  return *this; //devolvemos el objeto fecha ya incrementado
+    return *this; //devolvemos el objeto fecha ya incrementado
 }
 
-//RESTO DE METODOS Y FUNCIONES A RELLENAR POR EL ALUMNO...
+Fecha Fecha::operator++(int i){ //f++ Pasamos y luego incrementamos
+    Fecha temp = *this;
+    ++(*this);
+    return temp;
+}
 
-ostream& operator<<(ostream &s, const Fecha &f) {
-  const char *meses[] = {"", "ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"};
-  if (f.dia < 10)
-    s << "0";
-  s << f.dia << " " << meses[f.mes] << " " << f.anio;
-  return s;
+ostream& operator<<(ostream &os, const Fecha &f){
+    const char* diaMes[] = {"", "ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nom", "dic"};
+    os << f.dia << " " << diaMes[f.mes] << " " << f.anio;
+    return os;
+}
+
+//sumar dias + fecha (f2+5)
+Fecha Fecha::operator+(const int &a) const{
+    Fecha temp = *this;
+    for(int i = 0; i < a; i++){
+        ++temp;
+    }
+    return temp;
+}
+
+//Version global 5+f2
+Fecha operator+(const int &i, const Fecha &f){
+    return f + i;
 }

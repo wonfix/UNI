@@ -15,6 +15,8 @@ ContratoMovil::ContratoMovil(long int dni, Fecha f, float p, int m, char *nac): 
 
 ContratoMovil::~ContratoMovil() {
   //implementarlo...
+  //Destruimos la nacionalidad
+  delete[] nacionalidad;
 }
 
 //ContratoMovil::ContratoMovil(const ContratoMovil& c):Contrato(c) { //IMPORTANTE: SI PONGO ESTA CABECERA y no implemento un constructor de copia en CONTRATO
@@ -25,6 +27,9 @@ ContratoMovil::~ContratoMovil() {
 ContratoMovil::ContratoMovil(const ContratoMovil& c):Contrato(c.getDniContrato(), c.getFechaContrato()) { //... o usar esta otra cabecera
   this->precioMinuto=c.precioMinuto;
   //terminar de implementarlo...
+  this->minutosHablados = c.minutosHablados;
+  this->nacionalidad = new char[strlen(c.nacionalidad) + 1];
+  strcpy(this->nacionalidad, c.nacionalidad);
 }
 
 void ContratoMovil::ver() const {
@@ -34,20 +39,24 @@ void ContratoMovil::ver() const {
 }
 
 float ContratoMovil::factura() const {
-  //implementarlo...
+    float factura = precioMinuto * minutosHablados;
+    return factura;
 }
 
 
-void ContratoMovil::setNacionalidad(char* nac) {
-  //implementarlo...
+void ContratoMovil::setNacionalidad(const char* nac) {
+    delete [] this->nacionalidad; // Seguro¿?
+    this->nacionalidad = new char[strlen(nac) + 1];
+    strcpy(this->nacionalidad, nac);
 }
+
+
 
 ostream& operator<<(ostream &s, const ContratoMovil &c) {
   s << (Contrato &)c; //IMPORTANTE: convierto el objeto c (ContratoMovil &) a objeto Contrato &
                       // de esta forma se cree que es un objeto Contrato y muestra lo que indica el operator<< de Contrato
                       //... y a continuacion solo "me preocupo" de mostrar lo que es exclusivo del hijo
   s << " " << c.getMinutosHablados() << "m, " << c.getNacionalidad() << " " << c.getPrecioMinuto() << " - ";
-  s << c.factura() << "�";
+  s << c.factura() << "";
   return s;
 }
-

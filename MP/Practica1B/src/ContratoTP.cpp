@@ -12,3 +12,28 @@ void ContratoTP::setTarifaPlana(int m, float p) {
 }
 
 //RESTO DE METODOS Y FUNCIONES A RELLENAR POR EL ALUMNO...
+
+ContratoTP::ContratoTP(long int dni, Fecha f, int m) : Contrato(dni, f){
+    minutosHablados = m;
+}
+
+float ContratoTP::factura() const{
+    float factura = precioTP;
+    if(minutosHablados > minutosTP){
+        int exceso = minutosHablados - minutosTP;
+        factura += precioExcesoMinutos * exceso;
+    }
+    return factura;
+}
+
+void ContratoTP::ver() const{
+    Contrato::ver();
+    cout << " " << this->minutosHablados << "m, " << this->minutosTP << "(" << this->precioTP << ")";
+}
+
+ostream &operator<<(ostream &s, const ContratoTP &c){
+
+    s << (const Contrato &)c; //Mostrar dni y fecha
+    s << " " << c.getMinutosHablados() << "m, " << ContratoTP::getLimiteMinutos() << "(" << ContratoTP::getPrecio() << ") -" << c.factura();
+    return s;
+}

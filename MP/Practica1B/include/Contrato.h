@@ -14,7 +14,9 @@ class Contrato {
 public:
   Contrato(long int dni, Fecha f);
   virtual ~Contrato();
-//Contrato(const Contrato& c); //¿es necesario? pensar y reflexionad
+  Contrato(const Contrato& c); //¿es necesario? pensar y reflexionad, Si es necesario ya que si no lo pogo
+                               // no se incrementa el idContrato, si no que se copiaria el valor del id contrato
+                               // Es decir se copiaria el contrato tal cual (3 - bla bla bla) en vez de (4 - bla bla bla)
 
 //Contrato& operator=(const Contrato& c); //no es necesario y ademas no puede ser usado porque Contrato tiene un
                                           //atributo constante idContrato que no puede modificarse

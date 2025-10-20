@@ -15,6 +15,8 @@ Cliente::Cliente(long int d, char *nom, Fecha f):fechaAlta(f) { //esta cabecera 
   //this->fechaAlta=f;//MAL!!!! los tipos no primitivos debe ir en zona inicializadores
 }
 
+
+
 Cliente::~Cliente() {
   delete [] this->nombre; //si en el constructor uso new [] en el destructor uso delete []
 }
@@ -40,4 +42,24 @@ bool Cliente::operator==(Cliente c) const {
   return true;
 }
 
-//RESTO DE METODOS Y FUNCIONES A RELLENAR POR EL ALUMNO...
+
+ostream& operator<<(ostream &os, const Cliente &c){
+    os  << c.nombre << "(" << c.dni << " - " << c.fechaAlta << ")";
+    return os;
+}
+
+
+void Cliente::setNombre(char *nom){
+    delete [] this->nombre;
+    this->nombre = new char[strlen(nom) + 1];
+    strcpy(this->nombre, nom);
+}
+
+void Cliente::setFecha(Fecha f){
+    this->fechaAlta = f;
+}
+
+Cliente::Cliente(const Cliente &c) : dni(c.dni), fechaAlta(c.fechaAlta){
+    nombre = new char[strlen(c.nombre)+1];
+    strcpy(nombre, c.nombre);
+}

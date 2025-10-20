@@ -1,0 +1,88 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\amarquez\downloads\practica1a\main.cpp
+	<iostream>
+
+1605099347 
+
+1542139450 source:c:\users\amarquez\downloads\practica1a\src\cliente.cpp
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	<sstream>
+	"Cliente.h"
+
+1542141806 "
+
+1542139384 c:\users\amarquez\downloads\practica1a\include\cliente.h
+	<iostream>
+	"Fecha.h"
+
+1542139819 c:\users\amarquez\downloads\practica1a\include\fecha.h
+	<iostream>
+
+1542115996 source:c:\users\amarquez\downloads\practica1a\src\fecha.cpp
+	"Fecha.h"
+
+1514140574 source:c:\users\usuario\downloads\practica1a_ayuda_2020\main.cpp
+	<iostream>
+
+1542141806 source:c:\users\usuario\downloads\practica1a_ayuda_2020\src\cliente.cpp
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	<sstream>
+	"Cliente.h"
+
+1604494689 c:\users\usuario\downloads\practica1a_ayuda_2020\include\cliente.h
+	<iostream>
+	"Fecha.h"
+
+1605086653 c:\users\usuario\downloads\practica1a_ayuda_2020\include\fecha.h
+	<iostream>
+
+1605086673 source:c:\users\usuario\downloads\practica1a_ayuda_2020\src\fecha.cpp
+	"Fecha.h"
+
+1514140574 source:c:\users\amarquez\downloads\practica1a_ayuda_2020\main.cpp
+	<iostream>
+
+1542141806 source:c:\users\amarquez\downloads\practica1a_ayuda_2020\src\cliente.cpp
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	<sstream>
+	"Cliente.h"
+
+1604494689 c:\users\amarquez\downloads\practica1a_ayuda_2020\include\cliente.h
+	<iostream>
+	"Fecha.h"
+
+1605086653 c:\users\amarquez\downloads\practica1a_ayuda_2020\include\fecha.h
+	<iostream>
+
+1605099347 source:c:\users\amarquez\downloads\practica1a_ayuda_2020\src\fecha.cpp
+	"Fecha.h"
+
+1760977955 source:/home/wonfix/Escritorio/UNI/MP/Practica1A/main.cpp
+	<cstdlib>
+	<iostream>
+	"Fecha.h"
+	"Cliente.h"
+
+1760981059 source:/home/wonfix/Escritorio/UNI/MP/Practica1A/src/Fecha.cpp
+	"Fecha.h"
+
+1760980977 /home/wonfix/Escritorio/UNI/MP/Practica1A/include/Fecha.h
+	<iostream>
+
+1760980886 source:/home/wonfix/Escritorio/UNI/MP/Practica1A/src/Cliente.cpp
+	<cstdlib>
+	<cstring>
+	<iomanip>
+	<sstream>
+	"Cliente.h"
+
+1760980617 /home/wonfix/Escritorio/UNI/MP/Practica1A/include/Cliente.h
+	<iostream>
+	"Fecha.h"
+

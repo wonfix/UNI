@@ -4,7 +4,7 @@
 #include <iostream> //cin, cout
 
 using namespace std;
-//SI FALTA ALGUN METODO O FUNCION AÑADIRLO...
+//SI FALTA ALGUN METODO O FUNCION Aï¿½ADIRLO...
 class Fecha {
   int dia;
   int mes, anio;
@@ -23,11 +23,9 @@ public:
   Fecha operator+(const int &i) const; //f+5
 
   friend Fecha operator+(const int &i, const Fecha &f); //const por seguridad y & por velocidad
-  friend ostream& operator<<(ostream &s, const Fecha &f);
+  friend ostream& operator<<(ostream &os, const Fecha &f);
 };
 
-
 Fecha operator+(const int &i, const Fecha &f); //const por seguridad y & por velocidad
-ostream& operator<<(ostream &s, const Fecha &f);
 
 #endif // FECHA_H

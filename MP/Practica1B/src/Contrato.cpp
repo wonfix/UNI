@@ -9,6 +9,11 @@ Contrato::Contrato(long int dni, Fecha f): idContrato(contador), fechaContrato(f
   //this->fechaContrato=f; //ERROR es tipo no primitivo y debe ir en zona inicializadores
 }
 
+Contrato::Contrato(const Contrato &c): idContrato(c.contador), fechaContrato(c.fechaContrato){
+  dniContrato = c.dniContrato;
+  contador++;
+}
+
 Contrato::~Contrato() {
     //dtor
 }
