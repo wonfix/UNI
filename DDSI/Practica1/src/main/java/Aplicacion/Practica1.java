@@ -350,7 +350,7 @@ public class Practica1 {
                 }
                 pausar(sc);
                 break;
-
+                //PREGUNTAR XK AUNQUE NO EXISTA EL NUMSOCIO SIGUE DICIENDO SOCIO BORRADO CORRECTAMENTE
                 case 12: {
                     /*Borrado de socio por DNI. Se le pedirá al usuario el DNI del socio a eliminar y se procederá a
                         su borrado*/
